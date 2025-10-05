@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Coding Terminology</title>
+    <style>
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            background-image: radial-gradient(circle, #d5d5d6 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: #1d1d1f;
+            overflow-x: hidden;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+        }
+        
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            display: none;
+            padding: 80px 60px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slide-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            min-height: calc(100vh - 160px);
+        }
+        
+        .slide-content.single-column {
+            grid-template-columns: 1fr;
+            text-align: center;
+            justify-items: center;
+        }
+        
+        .text-content h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            color: #1d1d1f;
+        }
+        
+        .text-content h2 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.125;
+            letter-spacing: -0.015em;
+            color: #1d1d1f;
+        }
+        
+        .text-content p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            color: #1d1d1f;
+            font-weight: 400;
+        }
+        
+        .subtitle {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #86868b;
+            margin-top: 0.5rem;
+        }
+        
+        .image-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            
+        }
+        
+        .example {
+            background: #f7f7f7;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid #e5e5e7;
+        }
+        
+        .example p {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .comparison div {
+            background: #f5f5f7;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e7;
+        }
+        
+        .comparison h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        
+        .comparison p {
+            font-size: 1.125rem;
+            margin: 0;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            background: #1d1d1f;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .nav-btn:hover {
+            background: #424245;
+            transform: translateY(-1px);
+        }
+        
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid #e5e5e7;
+        }
+        
+        .highlight {
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        
+        ul {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .slide-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .text-content h1 {
+                font-size: 3rem;
+            }
+            
+            .text-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Intro Slide -->
+    <div class="slide active">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>Hi, 👋🏼
+                    <span class="block">I am Samar Mustafa</span>
+                <p>Design System Lead & AI Advocate</p>
+                <div class="example">
+                    <ul style="font-size: 1.125rem; line-height: 1.6;">
+                        <li><strong>Frontend & Full-stack Development</strong> - 8+ years experience</li>
+                        <li><strong>AI-Powered Development</strong> - Early adopter of agentic coding practices</li>
+                        <li><strong>Design Systems</strong> - Building scalable component libraries</li>
+                        <li><strong>Rapid Prototyping</strong> - From concept to production with AI assistance</li>
+                    </ul>
+                </div>
+                <p style="font-size: 1.25rem; color: #86868b; margin-top: 30px;">
+                    "Combining traditional software engineering with AI to accelerate development and innovation"
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="images/samar-profile.png" alt="Samar Mustafa" style="border-radius: 50%; width: 300px; height: 300px; object-fit: cover;" />
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-content single-column">
+            <div class="text-content">
+                <h1>What I have learned about Rapid prototyping with AI</h1>
+                <!-- <p class="subtitle">Simple definitions</p> -->
+                <img src="./images/token-finder.png" alt="Token finder" width="900px" style="border: 1px solid #000000; border-radius: 12px;" />
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>Tools used</h2>
+                <p>A smart assistant that can understand your goals and take multiple steps to achieve them</p>
+                  <ul>
+                    <li>Github Copilot</li>
+                    <li>ChatGPT</li>
+                    <li>Claude AI and Claude Code</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img src="./images/ai-agents.png" alt="AI Agent illustration" />
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="slide-content single-column">
+            <div class="text-content">
+                <h2>Agentic Coding Terminology</h2>
+                <!-- <p class="subtitle">Simple definitions</p> -->
+                <img src="./images/terminology.png" alt="AI Agent illustration" width="600px" />
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: AI Agent -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>AI Agent</h2>
+                <p>A smart assistant that can understand your goals and take multiple steps to achieve them</p>
+                <div class="example">
+                    <p><strong>Think:</strong> A helpful colleague who can code, research, and problem-solve</p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/ai-agents.png" alt="AI Agent illustration" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Agentic Coding -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/agentic-coding.png" alt="Agentic Coding comparison" />
+            </div>
+            <div class="text-content">
+                <h2>Agentic Coding</h2>
+                <p>Using AI as an active coding partner that helps think through problems, not just autocomplete</p>
+                <div class="comparison">
+                    <div>
+                        <h3>Traditional</h3>
+                        <p>AI fills in code snippets</p>
+                    </div>
+                    <div>
+                        <h3>Agentic</h3>
+                        <p>AI helps plan, build, and refine entire solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Prompting -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>Prompting</h2>
+                <p>How you communicate with AI - like giving instructions to a very smart intern</p>
+                <div class="example">
+                    <p><span class="highlight">Good:</span> "Create a responsive navigation bar with dropdown menus"</p>
+                    <br>
+                    <p><span class="highlight">Better:</span> "Create a navigation bar that works on mobile and desktop, includes dropdown menus, and follows our design system colors"</p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/ai-prompting.png" alt="Prompting examples" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Context -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/context-window.png" alt="Context illustration" />
+            </div>
+            <div class="text-content">
+                <h2>Context</h2>
+                <p>Background information you give AI to help it understand your project</p>
+                <ul>
+                    <li>Your design system rules</li>
+                    <li>Existing code patterns</li>
+                    <li>Project requirements</li>
+                    <li>Brand guidelines</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Iteration -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>Iteration</h2>
+                <p>The back-and-forth process of refining AI output</p>
+                <div class="example">
+                    <p><strong>1.</strong> Ask AI to create something</p>
+                    <p><strong>2.</strong> Review what it made</p>
+                    <p><strong>3.</strong> Ask for improvements</p>
+                    <p><strong>4.</strong> Repeat until satisfied</p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/iteration.png" alt="Iteration process" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Vibe-Coding -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/vibe-coding.png" alt="Vibe-Coding approach" />
+            </div>
+            <div class="text-content">
+                <h2>Vibe-Coding</h2>
+                <p>A relaxed, conversational approach to coding with AI</p>
+                <ul>
+                    <li>Start with how something should <em>feel</em></li>
+                    <li>Let AI suggest solutions</li>
+                    <li>Refine through natural conversation</li>
+                    <li>Focus on intent over perfect syntax</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Chain of Thought -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>Chain of Thought</h2>
+                <p>When AI explains its reasoning step-by-step</p>
+                <ul>
+                    <li>Helps you understand <em>why</em> AI made certain choices</li>
+                    <li>Makes it easier to request specific changes</li>
+                    <li>Builds your coding knowledge over time</li>
+                </ul>
+            </div>
+            <div class="image-content">
+                <img src="./images/chain-of-thoughts.png" alt="Chain of Thought process" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Few-Shot Learning -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/few-shots-learning.png" alt="Few-Shot Learning examples" />
+            </div>
+            <div class="text-content">
+                <h2>Few-Shot Learning</h2>
+                <p>Giving AI examples of what you want</p>
+                <ul>
+                    <li>Show 2-3 examples of your preferred coding style</li>
+                    <li>AI learns your patterns and applies them</li>
+                    <li>Works better than long written instructions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Hallucination -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>Hallucination</h2>
+                <p>When AI creates plausible-sounding but incorrect information</p>
+                <div class="example">
+                    <p><span class="highlight">Remember:</span></p>
+                    <p>Always test AI-generated code</p>
+                    <p>Verify facts and best practices</p>
+                    <p><strong>Trust but verify!</strong></p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/ai-hullucination.png" alt="AI Hallucination warning" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Code Generation -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/code-generation.png" alt="AI Code Generation" />
+            </div>
+            <div class="text-content">
+                <h2>Code Generation</h2>
+                <p>AI automatically creating complete code solutions from natural language descriptions</p>
+                <ul>
+                    <li>Generate entire functions or components</li>
+                    <li>Create boilerplate code instantly</li>
+                    <li>Transform requirements into working code</li>
+                    <li>Maintain consistent coding patterns</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Code Review -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>AI Code Review</h2>
+                <p>Using AI to analyze, critique, and improve your code quality</p>
+                <div class="example">
+                    <p><strong>AI can help with:</strong></p>
+                    <p>• Security vulnerabilities detection</p>
+                    <p>• Performance optimization suggestions</p>
+                    <p>• Code style and best practices</p>
+                    <p>• Bug identification and fixes</p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/code-review.png" alt="AI Code Review Process" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Refactoring -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/refactoring.png" alt="AI-Assisted Refactoring" />
+            </div>
+            <div class="text-content">
+                <h2>AI Refactoring</h2>
+                <p>Intelligent code restructuring and improvement with AI assistance</p>
+                <ul>
+                    <li>Modernize legacy code patterns</li>
+                    <li>Extract reusable components</li>
+                    <li>Improve code readability</li>
+                    <li>Optimize performance bottlenecks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Test Generation -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>AI Test Generation</h2>
+                <p>Automatically creating comprehensive test suites for your code</p>
+                <div class="example">
+                    <p><strong>Types of tests AI can generate:</strong></p>
+                    <p>• Unit tests for functions</p>
+                    <p>• Integration tests for components</p>
+                    <p>• Edge case scenarios</p>
+                    <p>• Mock data and fixtures</p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/test-generation.png" alt="AI Test Generation" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 15: Documentation -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/documentation.png" alt="AI Documentation Generation" />
+            </div>
+            <div class="text-content">
+                <h2>AI Documentation</h2>
+                <p>Generating clear, comprehensive documentation from your code</p>
+                <ul>
+                    <li>API documentation from code comments</li>
+                    <li>README files and guides</li>
+                    <li>Code explanations for complex logic</li>
+                    <li>User manuals and tutorials</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 16: Debugging -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>AI Debugging</h2>
+                <p>Smart error detection and resolution assistance</p>
+                <div class="example">
+                    <p><strong>AI debugging helps with:</strong></p>
+                    <p>• Error message interpretation</p>
+                    <p>• Root cause analysis</p>
+                    <p>• Solution suggestions</p>
+                    <p>• Prevention strategies</p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/debugging.png" alt="AI Debugging Process" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 17: Architecture Planning -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="image-content">
+                <img src="./images/architecture-planning.png" alt="AI Architecture Planning" />
+            </div>
+            <div class="text-content">
+                <h2>AI Architecture Planning</h2>
+                <p>High-level system design and architecture recommendations</p>
+                <ul>
+                    <li>Technology stack suggestions</li>
+                    <li>Design pattern recommendations</li>
+                    <li>Scalability considerations</li>
+                    <li>Security architecture review</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 18: Pair Programming -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>AI Pair Programming</h2>
+                <p>Collaborative coding with AI as your programming partner</p>
+                <div class="example">
+                    <p><strong>Benefits of AI pair programming:</strong></p>
+                    <p>• Real-time code suggestions</p>
+                    <p>• Alternative solution exploration</p>
+                    <p>• Continuous learning and improvement</p>
+                    <p>• 24/7 available coding companion</p>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="./images/pair-programming.png" alt="AI Pair Programming" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 19: Vibe-Coding Demo -->
+    <div class="slide">
+        <div class="slide-content">
+            <div class="text-content">
+                <h2>Vibe-Coding Demo</h2>
+                <p class="highlight">Design Tokens Visualiser</p>
+                
+                <div class="example">
+                    <h3 style="margin-bottom: 20px;">The Vibe-Coding Story:</h3>
+                    <ul style="font-size: 1.125rem; line-height: 1.6;">
+                        <li><strong>"I need a simple dashboard for finding design tokens"</strong></li>
+                        <li><strong>"Show dependencies between tokens"</strong></li>
+                        <li><strong>"Make it feel clean and developer-friendly"</strong></li>
+                        <li><strong>"Let me search and filter quickly"</strong></li>
+                    </ul>
+                    
+                    <p style="font-size: 1.125rem; margin-top: 25px;"><strong>Result:</strong> 873 tokens visualized with relationships, built through conversation and iteration</p>
+                </div>
+            </div>
+            
+            <div class="image-content">
+                <video controls style="width: 100%; border-radius: 10px; margin-top: 20px;">
+                    <source src="ds-token-finder.mov" type="video/mp4" autoplay>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">← Previous</button>
+        <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">19</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+    </script>
+</body>
+</html>
