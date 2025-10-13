@@ -2,11 +2,12 @@
   "name": "basic-ai-terminology",
   "version": "1.0.0",
   "description": "Agentic Coding Terminology and Vibe-Coding Presentation",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "npx tailwindcss -w",
-    "build": "npx tailwindcss -m",
-    "serve": "python3 -m http.server 3000",
+    "dev": "node server.js",
+    "build": "echo 'Build completed - static files ready for deployment'",
+    "serve": "node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["agentic-coding", "ai", "presentation", "figma", "mcp", "tailwind", "shadcn"],
@@ -21,6 +22,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "express": "^4.18.2",
     "lucide-react": "^0.545.0",
     "tailwind-merge": "^3.3.1"
   }
