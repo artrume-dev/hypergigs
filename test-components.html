@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Test - Chadcn UI Setup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+        // Import our button component
+        import { Button } from './components/ui/button.js';
+        
+        // Simple demo of the component
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('Chadcn UI setup complete!');
+        });
+    </script>
+</head>
+<body class="p-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Chadcn UI Components Test</h1>
+        
+        <div class="space-y-4 p-6 bg-white rounded-lg shadow">
+            <h2 class="text-xl font-semibold mb-4">Button Variants</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-900 text-slate-50 hover:bg-slate-900/90 h-10 px-4 py-2">
+                    Default
+                </button>
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-red-500 text-slate-50 hover:bg-red-500/90 h-10 px-4 py-2">
+                    Destructive
+                </button>
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 h-10 px-4 py-2">
+                    Outline
+                </button>
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-slate-100 text-slate-900 hover:bg-slate-100/80 h-10 px-4 py-2">
+                    Secondary
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-green-50 border border-green-200 rounded-lg">
+            <h3 class="text-lg font-semibold text-green-800 mb-2">✅ Setup Complete!</h3>
+            <p class="text-green-700">
+                Tailwind CSS and Chadcn UI components are now configured. 
+                You can use these components in your React/vanilla JavaScript projects.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

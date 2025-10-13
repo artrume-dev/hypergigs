@@ -1,0 +1,27 @@
+{
+  "name": "basic-ai-terminology",
+  "version": "1.0.0",
+  "description": "Agentic Coding Terminology and Vibe-Coding Presentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -w",
+    "build": "npx tailwindcss -m",
+    "serve": "python3 -m http.server 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["agentic-coding", "ai", "presentation", "figma", "mcp", "tailwind", "shadcn"],
+  "author": "Samar Mustafa",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.545.0",
+    "tailwind-merge": "^3.3.1"
+  }
+}

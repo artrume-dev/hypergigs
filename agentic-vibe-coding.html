@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Vibe Coding with Figma, ChatGPT, and GitHub Copilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sf': ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'apple-gray': {
+                            50: '#fafafa',
+                            100: '#f5f5f7',
+                            200: '#e1e1e6',
+                            300: '#d2d2d7',
+                            400: '#a1a1a6',
+                            500: '#86868b',
+                            600: '#6e6e73',
+                            700: '#515154',
+                            800: '#424245',
+                            900: '#1d1d1f'
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            background-image: radial-gradient(circle, #d2d2d7 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .slide {
+            display: none !important;
+            width: 100vw;
+            min-height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .slide.active {
+            display: flex !important;
+        }
+        
+        .slide.active a {
+            color: #1d1d1f;
+            text-decoration: underline; 
+        }
+        .slide.active a:hover {
+            color: #0e0ed0;
+        }
+        /* Custom scrollbar styling */
+        .slide::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .slide::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .slide::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        .slide::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .gradient-bg {
+            background: #f5f5f7;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #e5e5e7;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        
+        .highlight-yellow {
+            background: #fff9c4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .step-card {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        /* Navigation button styles */
+        .nav-btn {
+            background: #1d1d1f !important;
+            color: #ffffff !important;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .nav-btn:hover {
+            background: #424245 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="font-sf body overflow-hidden">
+
+    <!-- Slide 1: Title Slide -->
+    <div id="slide-1" class="slide active min-h-screen flex items-center justify-center">
+        <div class="max-w-6xl mx-auto px-8">
+        <div class="text-center text-apple-gray-900">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 mt-16 tracking-tight">
+                Agentic Vibe-Coding
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-light mb-8 text-apple-gray-600">
+                with Figma Plu  gin, ChatGPT, and GitHub Copilot
+            </h2>
+            <div class="flex flex-wrap justify-center gap-4 mt-12">
+                <div class="glass-effect px-6 py-3 rounded-full">
+                    <span class="text-lg font-medium">🎨 Figma MCP</span>
+                </div>
+                <div class="glass-effect px-6 py-3 rounded-full">
+                    <span class="text-lg font-medium">🤖 AI-Powered Development</span>
+                </div>
+                <div class="glass-effect px-6 py-3 rounded-full">
+                    <span class="text-lg font-medium">⚡ Rapid Prototyping</span>
+                </div>
+            </div>
+
+             <div class="flex flex-wrap justify-center text-center mt-16"> 
+                <!-- <p class="subtitle">Simple definitions</p> -->
+                <img src="./images/token-chain.png" alt="Token finder" width="900px" style="border: 1px solid #000000; border-radius: 12px;" />       
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Complete Setup Guide -->
+    <div id="slide-2" class="slide min-h-screen p-8">
+        <div class="max-w-6xl mx-auto py-12 px-6">
+            <h1 class="text-4xl font-bold text-apple-gray-900 mb-6 text-center">
+                🚀 3-Step Setup Guide
+            </h1>
+            <p class="text-lg text-center text-apple-gray-600 mb-10">Clear instructions to get you coding with AI</p>
+            
+            <!-- Step 1: GitHub Account & Copilot -->
+            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-3xl p-8 mb-8 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4 text-xl">1</div>
+                    <h2 class="text-2xl font-bold text-blue-800">Create GitHub Account & Enable Copilot</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Step 1a: Create Account -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-blue-700 mb-4">📝 Create Free Account</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">1</span>
+                                <div>
+                                    <p class="font-medium">Visit <a href="https://github.com">github.com</a></p>
+                                    <p class="text-gray-600">Click "Sign up" button</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium">Enter your details</p>
+                                    <p class="text-gray-600">Use school email for student benefits</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">3</span>
+                                <div>
+                                    <p class="font-medium">Verify email</p>
+                                    <p class="text-gray-600">Check inbox & click verify link</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <!-- Step 1b: Enable Copilot -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-blue-700 mb-4">🤖 Enable Copilot</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">1</span>
+                      
+                                    <p class="font-medium">Visit <a href="https://github.com/features/copilot">github.com/features/copilot</a></p>
+                                    
+
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium">Choose plan</p>
+                                    <p class="text-gray-600">Individual ($10/month or free for students)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">3</span>
+                               <div>
+                                    <p class="font-medium">Confirm activation</p>
+                                    <p class="text-gray-600">You'll see "Copilot enabled" message</p>
+                          </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 1c: Student Benefits -->
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 border-2 border-yellow-200">
+                        <h3 class="text-lg font-bold text-orange-700 mb-4">🎓 Students Get FREE!</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <span class="bg-yellow-100 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">💰</span>
+                                <div>
+                                    <p class="font-medium">GitHub Student Pack</p>
+                                    <p class="text-gray-600">Free Copilot + 100+ dev tools</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-yellow-100 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">📧</span>
+                                <div>
+                                    <p class="font-medium">Use .edu email</p>
+                                    <p class="text-gray-600">Apply at education.github.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-yellow-100 text-yellow-800 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">✅</span>
+                                <div>
+                                    <p class="font-medium">Instant approval</p>
+                                    <p class="text-gray-600">Most students approved immediately</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 2: VS Code + Copilot -->
+            <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-3xl p-8 mb-8 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold mr-4 text-xl">2</div>
+                    <h2 class="text-2xl font-bold text-green-800">Setup VS Code with GitHub Copilot</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Install VS Code -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-green-700 mb-4">💻 Install VS Code</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="bg-green-100 text-green-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">1</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Download VS Code</p>
+                                    <p class="text-sm text-gray-600 mb-2">Go to <strong><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></strong></p>
+                                    <p class="text-sm text-gray-600">Choose your OS: Windows, Mac, or Linux</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-green-100 text-green-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Install & Launch</p>
+                                    <p class="text-sm text-gray-600">Run installer → Open VS Code</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-green-100 text-green-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">3</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Sign in to GitHub</p>
+                                    <p class="text-sm text-gray-600">VS Code will prompt you to sign in</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Install Extensions -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-green-700 mb-4">🔌 Install Copilot Extensions</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="bg-purple-100 text-purple-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">1</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Open Extensions</p>
+                                    <p class="text-sm text-gray-600">Press <kbd class="bg-gray-200 px-2 py-1 rounded text-xs">⌘+Shift+X</kbd> (Mac) or <kbd class="bg-gray-200 px-2 py-1 rounded text-xs">Ctrl+Shift+X</kbd> (Win)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-purple-100 text-purple-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Search & Install</p>
+                                    <p class="text-sm text-gray-600 mb-1">Type "GitHub Copilot" → Install</p>
+                                    <p class="text-sm text-gray-600">Also install "GitHub Copilot Chat"</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-purple-100 text-purple-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">3</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Test It Works!</p>
+                                    <p class="text-sm text-gray-600">Create a .js file → Type a comment → See suggestions!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Step 3: Figma MCP -->
+            <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-3xl p-8 shadow-xl">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mr-4 text-xl">3</div>
+                    <h2 class="text-2xl font-bold text-purple-800">Connect Figma MCP Server</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Enable Figma MCP -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-purple-700 mb-4">🎨 Enable Figma MCP</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="bg-purple-100 text-purple-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">1</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Download Figma Desktop</p>
+                                    <p class="text-sm text-gray-600">Go to <strong>figma.com/downloads</strong></p>
+                                    <p class="text-sm text-gray-600">Install and open Figma Desktop app</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-purple-100 text-purple-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Enable MCP Server</p>
+                                    <p class="text-sm text-gray-600 mb-1">Figma menu → <strong>Preferences</strong></p>
+                                    <p class="text-sm text-gray-600">Toggle ON: <strong>"Enable local MCP Server"</strong></p>
+                                    <p class="text-sm text-gray-600">Popup should appear for different IDEs setup with Figma MCP</p>
+                                    <img src="./images/vs-code-figma.png" alt="Token finder" width="400px" style="margin-top: 8px; border-radius: 8px;" />
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-purple-100 text-purple-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">3</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Verify It's Running</p>
+                                    <p class="text-sm text-gray-600">Look for confirmation at bottom of Figma</p>
+                                    <p class="text-sm text-gray-600">Server runs on: <code class="bg-gray-100 px-2 py-1 rounded text-xs">http://127.0.0.1:3845/mcp</code></p>
+                                <img src="./images/figma-mcp-url.png" alt="Token finder" width="400px" style="margin-top: 8px; border-radius: 8px;" />
+                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connect to VS Code -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-purple-700 mb-4">🔗 Connect to VS Code</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="bg-orange-100 text-orange-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">1</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Open Command Palette</p>
+                                    <p class="text-sm text-gray-600">Press <kbd class="bg-gray-200 px-2 py-1 rounded text-xs">⌘+Shift+P</kbd> (Mac) or <kbd class="bg-gray-200 px-2 py-1 rounded text-xs">Ctrl+Shift+P</kbd> (Win)</p>
+                                <img src="./images/mcp-add-server.png" alt="Token finder" width="400px" style="margin-top: 8px; border-radius: 8px;" />
+                                
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-orange-100 text-orange-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Add MCP Server</p>
+                                    <p class="text-sm text-gray-600 mb-1">Type: <strong>"MCP: Add Server"</strong></p>
+                                    <p class="text-sm text-gray-600">Select "HTTP" → Enter URL above</p>
+                                    <img src="./images/select-http.png" alt="Token finder" width="400px" style="margin-top: 8px; border-radius: 8px;" />
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-orange-100 text-orange-800 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">3</span>
+                                <div>
+                                    <p class="font-medium text-gray-900">Test Connection</p>
+                                    <p class="text-sm text-gray-600 mb-1">Open Chat: <kbd class="bg-gray-200 px-2 py-1 rounded text-xs">⌥⌘B</kbd> or <kbd class="bg-gray-200 px-2 py-1 rounded text-xs">Ctrl+Alt+B</kbd></p>
+                                    <p class="text-sm text-gray-600">Type: <strong>#get_code</strong> to see tools!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        
+
+                
+                <!-- Success Check -->
+                <div class="mt-6 bg-green-50 border-2 border-green-200 rounded-xl p-4">
+                    <h4 class="text-lg font-bold text-green-800 mb-3">✅ You're Ready When...</h4>
+                    <div class="grid md:grid-cols-4 gap-4 text-sm">
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">👤</div>
+                            <p class="font-medium text-green-800">GitHub signed in</p>
+                            <p class="text-green-600">Copilot active</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">💻</div>
+                            <p class="font-medium text-green-800">VS Code ready</p>
+                            <p class="text-green-600">Extensions installed</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🎨</div>
+                            <p class="font-medium text-green-800">Figma MCP running</p>
+                            <p class="text-green-600">Server confirmed</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl mb-2">🚀</div>
+                            <p class="font-medium text-green-800">Chat shows tools</p>
+                            <p class="text-green-600">#get_code works!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            
+          
+              
+            </div>
+        </div>
+
+  
+
+    <!-- Slide 3: Vibe-Coding Transformation -->
+    <div id="slide-3" class="slide min-h-screen p-8">
+        <div class="max-w-6xl mx-auto py-12 px-6">
+            <h1 class="text-5xl font-bold text-apple-gray-900 mb-20 text-center">
+                ⚡ From Concept to Working Tool
+            </h1>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h2 class="text-3xl font-bold mb-6 text-red-600">Traditional Approach</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">📝</span>
+                                <span class="text-lg">Write detailed specifications</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🏗️</span>
+                                <span class="text-lg">Set up project structure</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">⌨️</span>
+                                <span class="text-lg">Write code from scratch</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🐛</span>
+                                <span class="text-lg">Debug and iterate</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🎨</span>
+                                <span class="text-lg">Style and polish</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-semibold">
+                                ⏱️ Days to Weeks
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-green-200">
+                        <h2 class="text-3xl font-bold mb-6 text-green-600">Vibe-Coding with AI</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">💭</span>
+                                <span class="text-lg highlight-yellow">"I need a token finder dashboard"</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🤖</span>
+                                <span class="text-lg">AI generates complete structure</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🔄</span>
+                                <span class="text-lg">Iterate through conversation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">✨</span>
+                                <span class="text-lg">Refine with natural language</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🚀</span>
+                                <span class="text-lg">Deploy and share</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold">
+                                ⚡ Minutes to Hours
+                            </span>
+                        </div>
+                    </div>
+                    
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Slide 4: FLOW Framework -->
+    <div id="slide-4" class="slide min-h-screen p-8">
+        <div class="max-w-6xl mx-auto py-12 px-6">
+            <h1 class="text-5xl font-bold text-apple-gray-900 mb-8 text-center">
+                🌊 The FLOW Framework
+            </h1>
+            <p class="text-xl text-center text-apple-gray-600 mb-12">A Structured Approach to AI-Powered Development</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- FLOW Components -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-xl border-l-4 border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold mr-4 text-xl">F</div>
+                            <h3 class="text-2xl font-bold text-blue-700">Feeling First</h3>
+                        </div>
+                        <p class="text-apple-gray-700">Start with the emotional/experiential quality you're targeting</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-xl border-l-4 border-green-500">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-green-500 text-white rounded-lg flex items-center justify-center font-bold mr-4 text-xl">L</div>
+                            <h3 class="text-2xl font-bold text-green-700">Logic & Layers</h3>
+                        </div>
+                        <p class="text-apple-gray-700">Define the technical architecture and functionality needed</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-xl border-l-4 border-orange-500">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center font-bold mr-4 text-xl">O</div>
+                            <h3 class="text-2xl font-bold text-orange-700">Output Style</h3>
+                        </div>
+                        <p class="text-apple-gray-700">Specify code format, naming conventions, and aesthetic approach</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-xl border-l-4 border-purple-500">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-purple-500 text-white rounded-lg flex items-center justify-center font-bold mr-4 text-xl">W</div>
+                            <h3 class="text-2xl font-bold text-purple-700">Workthrough</h3>
+                        </div>
+                        <p class="text-apple-gray-700">Provide examples, edge cases, and implementation guidance</p>
+                    </div>
+                </div>
+
+                <!-- FLOW Diagram -->
+                <!--<div class="flex items-center justify-center">
+                    <img src="./images/flow.png" alt="FLOW Framework" class="max-w-full h-auto" />
+                </div>-->
+
+
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h2 class="text-2xl font-bold mb-6 text-center">Why Use FLOW?</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">🎯</span>
+                                <div>
+                                    <h4 class="font-bold text-apple-gray-900">Comprehensive Coverage</h4>
+                                    <p class="text-sm text-apple-gray-600">Addresses UX, technical, and implementation aspects</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">🔄</span>
+                                <div>
+                                    <h4 class="font-bold text-apple-gray-900">Repeatable Process</h4>
+                                    <p class="text-sm text-apple-gray-600">Consistent results across different projects</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">💡</span>
+                                <div>
+                                    <h4 class="font-bold text-apple-gray-900">AI-Optimized</h4>
+                                    <p class="text-sm text-apple-gray-600">Structured format AI models understand best</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-2xl mr-3">⚡</span>
+                                <div>
+                                    <h4 class="font-bold text-apple-gray-900">Faster Iterations</h4>
+                                    <p class="text-sm text-apple-gray-600">Fewer back-and-forth clarifications needed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: FLOW Framework Example -->
+    <div id="slide-5" class="slide min-h-screen p-8">
+        <div class="max-w-6xl mx-auto py-12 px-6">
+            <h1 class="text-4xl font-bold text-apple-gray-900 mb-8 text-center">
+                🌊 FLOW in Action: Building a Button Component
+            </h1>
+            
+            <div class="space-y-6">
+                <!-- F - Feeling First -->
+                <div class="bg-blue-50 border-l-4 border-blue-500 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold mr-3 text-lg">F</div>
+                        <h3 class="text-xl font-bold text-blue-700">Feeling First</h3>
+                    </div>
+                    <p class="text-apple-gray-700 leading-relaxed">
+                        Create buttons that feel <span class="highlight-yellow">confident and modern</span>, with smooth, satisfying interactions. 
+                        They should convey trust and professionalism while being approachable. Animations should feel crisp, not sluggish—think 
+                        <strong>200-300ms transitions</strong> that feel responsive.
+                    </p>
+                </div>
+                
+                <!-- L - Logic & Layers -->
+                <div class="bg-green-50 border-l-4 border-green-500 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-green-500 text-white rounded-lg flex items-center justify-center font-bold mr-3 text-lg">L</div>
+                        <h3 class="text-xl font-bold text-green-700">Logic & Layers</h3>
+                    </div>
+                    <p class="text-apple-gray-700 leading-relaxed mb-3">
+                        Build a React button component system with variants for <strong>primary, secondary, tertiary, and destructive</strong> actions. 
+                        Include size options (small, medium, large), states (default, hover, active, disabled, loading), and support for icons 
+                        (leading, trailing, icon-only).
+                    </p>
+                    <div class="bg-white rounded-lg p-3">
+                        <p class="text-sm text-apple-gray-600">
+                            <strong>Tech Stack:</strong> React + TypeScript + Tailwind CSS for styling
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- O - Output Style -->
+                <div class="bg-orange-50 border-l-4 border-orange-500 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center font-bold mr-3 text-lg">O</div>
+                        <h3 class="text-xl font-bold text-orange-700">Output Style</h3>
+                    </div>
+                    <p class="text-apple-gray-700 leading-relaxed mb-3">
+                        Component code should follow <strong>atomic design principles</strong> with clear prop naming. Use compound components 
+                        pattern for flexibility.
+                    </p>
+                    <div class="bg-white rounded-lg p-3">
+                        <p class="text-sm font-mono text-apple-gray-700">
+                            📁 Button/index.tsx<br>
+                            📁 Button.types.ts<br>
+                            📁 Button.styles.ts
+                        </p>
+                        <p class="text-sm text-apple-gray-600 mt-2">
+                            Export all variants from a single entry point. Include <strong>Storybook stories</strong> for each variant.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- W - Workthrough -->
+                <div class="bg-purple-50 border-l-4 border-purple-500 rounded-xl p-6">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-purple-500 text-white rounded-lg flex items-center justify-center font-bold mr-3 text-lg">W</div>
+                        <h3 class="text-xl font-bold text-purple-700">Workthrough</h3>
+                    </div>
+                    <p class="text-apple-gray-700 leading-relaxed mb-4">
+                        Start with the base Button component accepting <code class="bg-white px-2 py-1 rounded text-sm">variant</code>, 
+                        <code class="bg-white px-2 py-1 rounded text-sm">size</code>, <code class="bg-white px-2 py-1 rounded text-sm">disabled</code>, 
+                        <code class="bg-white px-2 py-1 rounded text-sm">loading</code>, and <code class="bg-white px-2 py-1 rounded text-sm">onClick</code> props.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 border-2 border-purple-200">
+                            <h4 class="font-bold text-purple-700 mb-2">Primary CTA</h4>
+                            <p class="text-sm text-apple-gray-600">Full-width button with icon, main call-to-action styling</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-2 border-purple-200">
+                            <h4 class="font-bold text-purple-700 mb-2">Ghost Button</h4>
+                            <p class="text-sm text-apple-gray-600">Transparent background for secondary actions</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border-2 border-purple-200">
+                            <h4 class="font-bold text-purple-700 mb-2">Icon-Only</h4>
+                            <p class="text-sm text-apple-gray-600">Compact button for toolbar actions</p>
+                        </div>
+                    </div>
+             
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    
+    <!-- Slide 6: Variable Visualiser & Token Finder -->
+    <div id="slide-6" class="slide min-h-screen p-8">
+        <div class="max-w-6xl mx-auto py-12 px-6">
+            <h1 class="text-5xl font-bold text-apple-gray-900 mb-12 text-center">
+                🧩 From JSON source to Token Finder dashboard
+            </h1>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <div class="flex items-center mb-6">
+                            <img src="./images/mr-biscuit.jpeg" alt="Mr Biscuit" class="w-8 h-8 rounded-full mr-4">
+                            <div>
+                                <h2 class="text-2xl font-bold">Figma Plugin: Variable Visualizer</h2>
+                                <p class="text-apple-gray-500">by Mr Biscuit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">📊</span>
+                                <span class="text-lg">Exports Figma variables as JSON</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🔗</span>
+                                <span class="text-lg">Shows variable relationships</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🎨</span>
+                                <span class="text-lg">Visualizes design token hierarchy</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">⚡</span>
+                                <span class="text-lg">One-click export functionality</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-cyan-600 text-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold mb-4">Magic Workflow</h3>
+                        <div class="space-y-2">
+                            <p>1. 🎨 Design in Figma with variables</p>
+                            <p>2. 📱 Run Variable Visualiser plugin</p>
+                            <p>3. 📋 Copy JSON output</p>
+                            <p>4. 🤖 Paste into AI prompt</p>
+                            <p>5. ✨ Get working token finder!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h2 class="text-2xl font-bold mb-6">Design Token Finder Demo</h2>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4 mb-6">
+                            <div class="text-green-400 font-mono text-sm">
+                                <p>$ ai-prompt: "Create a token finder using this JSON..."</p>
+                                <p class="text-blue-400">Building component structure...</p>
+                                <p class="text-yellow-400">Adding search functionality...</p>
+                                <p class="text-green-400">Generating relationships view...</p>
+                                <p class="text-white">✅ Done! 873 tokens visualized</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-800">Result: Interactive Dashboard</h4>
+                                <ul class="text-sm text-green-700 mt-2 space-y-1">
+                                    <li>• Search across 873 design tokens</li>
+                                    <li>• Filter by categories and types</li>
+                                    <li>• Visualize token dependencies</li>
+                                    <li>• Copy token values instantly</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="inline-block bg-purple-500 text-white px-6 py-3 rounded-full font-bold">
+                                    ⏱️ Built in 1 day with AI
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Demo -->
+    <div id="slide-7" class="slide min-h-screen p-2">
+        <div class="max-w-6xl mx-auto text-center py-8 px-6">
+            <h1 class="text-6xl font-bold mb-4">
+                Live Demo & Vibe-Coding in Action
+            </h1>
+            
+            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-12 mb-12">
+                
+                
+                <div class="bg-black rounded-2xl p-8 mb-8">
+                    <video controls class="w-full max-w-4xl mx-auto rounded-lg">
+                        <source src="token-chain-demo.mp4" type="video/mp4">
+                        <source src="token-chain-demo.mov" type="video/mov">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            
+            <!-- Back to Introduction CTA -->
+            <div class="mt-4 mb-4">
+                <a href="index.html" 
+                   class="inline-block bg-blue-100 text-white font-bold text-xl px-8 py-4 rounded-full"
+                   style="text-decoration: none;">
+                    ← Back to Introduction
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="fixed bottom-8 right-8 flex gap-4 z-50">
+        <button onclick="previousSlide()" class="nav-btn px-6 py-3 rounded-full transition-all duration-300 font-medium">
+            ← Previous
+        </button>
+        <button onclick="nextSlide()" class="nav-btn px-6 py-3 rounded-full transition-all duration-300 font-medium">
+            Next →
+        </button>
+    </div>
+
+    <div class="fixed bottom-8 left-8 bg-white/90 backdrop-blur-sm text-apple-gray-900 px-6 py-3 rounded-full font-medium shadow-lg z-50 border border-apple-gray-200">
+        <span id="current-slide">1</span> / <span id="total-slides">8</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        console.log('Total slides found:', totalSlides);
+        document.getElementById('total-slides').textContent = totalSlides;
+        
+        // Debug: Log slide titles
+        slides.forEach((slide, index) => {
+            const title = slide.querySelector('h1');
+            console.log(`Slide ${index + 1}: ${title ? title.textContent.trim() : 'No title found'}`);
+        });
+
+        function showSlide(n) {
+            console.log('Hiding slide:', currentSlide + 1, slides[currentSlide]?.id);
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            console.log('Showing slide:', currentSlide + 1, slides[currentSlide]?.id);
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].scrollTop = 0; // Scroll to top of new slide
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            console.log('Next slide clicked');
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            console.log('Previous slide clicked');
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            }
+        });
+
+        // Touch navigation for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + 50) {
+                previousSlide();
+            }
+        }
+
+        // Auto-advance slides (optional)
+        // setInterval(nextSlide, 30000); // Uncomment to auto-advance every 30 seconds
+    </script>
+</body>
+</html>
